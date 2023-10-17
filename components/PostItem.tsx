@@ -16,6 +16,8 @@ export default function PostItem({
                   <div className="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-32 lg:w-48">
                         <Image
                               src={post.featuredImage}
+                              width={100}
+                              height={100}
                               loading="lazy"
                               alt={post.title}
                               className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"

@@ -21,7 +21,7 @@ const initalState: BlogState = {
 };
 
 export const addPost = createAction(
-      'blog/addPost',
+      'addPost',
       function (post: Omit<Post, 'id'>) {
             return {
                   payload: {
@@ -31,16 +31,14 @@ export const addPost = createAction(
             };
       },
 );
-export const deletePost = createAction<string>('blog/deletePost');
-export const startEditingPost = createAction<string>('/blog/startEditingPost');
-export const cancelEditingPost = createAction('/blog/cancelEditingPost');
-export const finishEditingPost = createAction<Post>('/blog/finishEditingPost');
+export const deletePost = createAction<string>('deletePost');
+export const startEditingPost = createAction<string>('startEditingPost');
+export const cancelEditingPost = createAction('cancelEditingPost');
+export const finishEditingPost = createAction<Post>('finishEditingPost');
 
 const blogReducer = createReducer(initalState, (builder) => {
       builder
             .addCase(addPost, (state, action) => {
-                  // immerjs
-                  // immerjs giúp chúng ta mutate một state an toàn
                   const post = action.payload;
                   state.postList.push(post);
             })

@@ -1,3 +1,5 @@
+'use client'
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import PostItem from './PostItem';
@@ -7,6 +9,8 @@ import { deletePost, startEditingPost } from '@/redux/blog.reducer';
 
 export default function PostList() {
       const postList = useSelector((state: RootState) => state.blog.postList);
+      console.log(postList);
+      
       const dispatch = useDispatch();
       const handleDelete = (postId: string) => {
             dispatch(deletePost(postId));
